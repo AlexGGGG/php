@@ -2,7 +2,9 @@
 include ('config.php');
 $query='SELECT * FROM news';
 $responce=mysqli_query($connection, $query)
+
 ?>
+
 
 
 <!doctype html>
@@ -21,9 +23,11 @@ $responce=mysqli_query($connection, $query)
     <h1>Hello, world!</h1>
 <?php
     while ($line = mysqli_fetch_assoc ($responce)) {
+        echo "<link rel='stylesheet' href='css.css'>";
         echo 'ID:'.$line['id'].'<br>';
         echo 'Title: '.$line['title'].'<br>';
         echo 'News: '.$line['news'].'<br><br>';
+
     }
 
     mysqli_free_result($responce);
